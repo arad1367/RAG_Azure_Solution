@@ -18,8 +18,6 @@
 ## Overview
 A Streamlit-based chat application that integrates with various LLM providers (OpenAI, Anthropic, Azure OpenAI) and includes RAG (Retrieval-Augmented Generation) capabilities. This application provides an intuitive interface for interacting with different language models while supporting document-based context enhancement.
 
-*Original source code by [Enric Domingo](https://github.com/enricd)*
-
 ## Features
 - 🤖 Multiple LLM Support:
   - OpenAI models
