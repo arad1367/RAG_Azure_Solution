@@ -117,4 +117,4 @@ Any contribution is appreciated.
 This project is based on the original code by [Enric Domingo](https://github.com/enricd).
 
 ## Contact
-- Pejman Ebrahimi [`pejman.ebrahimi@uni.li`] & [`pejman.ebrahimi77@gmail.com`]
+Feel free to contact me: [Pejman Ebrahimi](https://github.com/arad1367) [`pejman.ebrahimi@uni.li`] & [`pejman.ebrahimi77@gmail.com`]
