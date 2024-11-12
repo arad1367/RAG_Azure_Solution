@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import dotenv
 import uuid
+import base64
 
 # check if it's linux so it works on Streamlit Cloud
 if os.name == 'posix':
@@ -33,16 +34,55 @@ else:
     MODELS = ["azure-openai/gpt-4o"]
 
 
+# --------------- Start UI ------------------- #
 st.set_page_config(
-    page_title="RAG LLM app?", 
-    page_icon="📚", 
-    layout="centered", 
+    page_title="NÄGELE AI",
+    page_icon="favicon.ico",
+    layout="centered",
     initial_sidebar_state="expanded"
 )
 
+# Custom CSS
+st.markdown("""
+    <style>
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;  /* Adjusts space between logo and header */
+    }
+    .company-header {
+        color: #0066cc;
+        font-weight: bold;
+        font-style: italic;
+        margin-top: 0;
+    }
+    .logo-link {
+        display: block;
+        text-align: center;
+    }
+    .logo-link:hover {
+        opacity: 0.8;  /* Slight hover effect on logo */
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-# --- Header ---
-st.html("""<h2 style="text-align: center;">📚🔍 <i> Do your LLM even RAG bro? </i> 🤖💬</h2>""")
+# Container div
+st.markdown('<div class="center-container">', unsafe_allow_html=True)
+
+# Clickable logo
+st.markdown(f"""
+    <a href="https://www.naegele.law/onboarding" target="_blank" class="logo-link">
+        <img src="data:image/png;base64,{base64.b64encode(open('Naegele_Rechtsanwaelte.png', 'rb').read()).decode()}" width="200">
+    </a>
+""", unsafe_allow_html=True)
+
+# Header
+st.markdown('<h2 class="company-header">NÄGELE AI</h2>', unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
+# End UI #
+# ------------------------------------------------------- #
 
 
 # --- Initial Setup ---
@@ -199,8 +239,10 @@ else:
 
 with st.sidebar:
     st.divider()
-    st.video("https://youtu.be/abMwFViFFhI")
-    st.write("📋[Medium Blog](https://medium.com/@enricdomingo/program-a-rag-llm-chat-app-with-langchain-streamlit-o1-gtp-4o-and-claude-3-5-529f0f164a5e)")
-    st.write("📋[GitHub Repo](https://github.com/enricd/rag_llm_app)")
-
-    
+    st.markdown("""
+        <a href="https://www.naegele.law/onboarding" target="_blank">
+            <img src="data:image/png;base64,{}" width="200" style="display: block; margin: auto;">
+        </a>
+        """.format(base64.b64encode(open('Naegele_Rechtsanwaelte.png', 'rb').read()).decode()), 
+        unsafe_allow_html=True
+    )
